@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg">
+    <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">📈 Resultados del Modelo</h2>
+
+    {% if results.Error %}
+      <p class="text-red-600 text-center">{{ results.Error }}</p>
+    {% else %}
+      <ul class="space-y-3">
+        {% for key, value in results.items() %}
+          <li class="flex justify-between border-b pb-1">
+            <span class="font-medium text-slate-700">{{ key }}</span>
+            <span class="text-slate-900">{{ "%.4f"|format(value) }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="text-center mt-8">
+      <a href="/"
+         class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md">
+        🔙 Volver
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

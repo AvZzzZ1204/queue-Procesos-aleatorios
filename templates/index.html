@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Colas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg">
+    <h1 class="text-2xl font-bold text-center mb-6 text-slate-800">
+      🎯 Simulador de Modelos de Colas
+    </h1>
+
+    <form method="post" class="space-y-5">
+      <div>
+        <label class="block text-slate-700 font-medium mb-2">Modelo:</label>
+        <select name="model" required class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
+          <option value="MM1">M/M/1</option>
+          <option value="MM1K">M/M/1/K</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-slate-700 font-medium mb-2">λ (Tasa de llegada):</label>
+        <input type="number" step="any" name="lambda" required
+               class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
+      </div>
+
+      <div>
+        <label class="block text-slate-700 font-medium mb-2">μ (Tasa de servicio):</label>
+        <input type="number" step="any" name="mu" required
+               class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
+      </div>
+
+      <div>
+        <label class="block text-slate-700 font-medium mb-2">K (Capacidad, solo para M/M/1/K):</label>
+        <input type="number" name="K" placeholder="Ej. 3"
+               class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
+      </div>
+
+      <div class="text-center">
+        <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md">
+          Calcular
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
